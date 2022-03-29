@@ -39,7 +39,7 @@ bazadann_new = read('baza.json')
 @bp.on.chat_message()
 async def invite(message:Message):
     bazadann_new = read('baza.json')
-    if message.text!='sdfsf' and message.text.lower() not in bazadann_new:
+    if message.text!='' and message.text.lower() not in bazadann_new:
         #await message.answer(str(message))
         #await message.answer(str(message.reply_message.text))
         #await message.answer(str(message.text))
@@ -52,7 +52,7 @@ async def invite(message:Message):
         write(baza_js_new, 'baza.json')
         global bazadan_new
         bazadan_new = read('baza.json')
-    elif message.text.lower() in bazadan_new:
+    elif message.text.lower() in bazadan_new and message.text!='':
         await message.answer(bazadan_new[message.text.lower()])
 
 bazadan_new = read('baza.json')
